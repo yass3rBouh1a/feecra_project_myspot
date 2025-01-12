@@ -1,37 +1,23 @@
 import React from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button } from 'react-native';
+import { styled } from 'tailwindcss-react-native';
 
 const SignIn = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Sign In</Text>
-      <TextInput placeholder="Enter your email" style={styles.input} />
-      <TextInput placeholder="Enter your password" secureTextEntry style={styles.input} />
+    <View className="flex-1 justify-center p-5 bg-white">
+      <Text className="text-2xl font-bold mb-5 text-center">Sign In</Text>
+      <TextInput
+        placeholder="Enter your email"
+        className="border border-gray-300 p-3 mb-4 rounded"
+      />
+      <TextInput
+        placeholder="Enter your password"
+        secureTextEntry
+        className="border border-gray-300 p-3 mb-4 rounded"
+      />
       <Button title="Sign In" onPress={() => alert('Signed In!')} />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 20,
-    backgroundColor: '#fff',
-  },
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    textAlign: 'center',
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 10,
-    marginVertical: 10,
-    borderRadius: 5,
-  },
-});
 
 export default SignIn;
